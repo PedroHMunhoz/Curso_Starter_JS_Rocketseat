@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso JavaScript</title>
+  </head>
+  <body>
+    <!-- <div id="app">
+      <button onmouseover="mostraAlerta();">Me pressione</button>
+    </div>
+    <script>
+      function mostraAlerta() {
+        alert("Botão foi clicado");
+      }
+    </script> -->
+    <!-- 
+    <div id="app">
+      <input type="text" class="nome" name="nome" id="nome" />
+      <button class="botao">Adicionar</button>
+    </div>
+
+    <script>
+      //   var inputElement = document.getElementById("nome");
+      //   var inputElement = document.getElementsByTagName("input");
+      //   var inputElement = document.getElementsByClassName("nome");
+      //   var inputElement = document.querySelector("div#app input");
+      var inputElement = document.querySelector("input[name=nome]");
+      var btnElement = document.querySelector("button.botao");
+      btnElement.onclick = function() {
+        var text = inputElement.value;
+        alert(text);
+      };
+    </script> -->
+
+    <!-- <div id="app">
+      <input type="text" class="nome" name="nome" id="nome" />
+    </div>
+
+    <script>
+      var linkElement = document.createElement("a");
+      linkElement.setAttribute("href", "https://rocketseat.com.br/");
+      linkElement.setAttribute("title", "Site da Rocketseat");
+
+      var textElement = document.createTextNode("Acessar site da Rocketseat");
+      linkElement.appendChild(textElement);
+
+      var containerElement = document.querySelector("#app");
+      containerElement.appendChild(linkElement);
+
+      var inputElement = document.querySelector("#nome");
+      containerElement.removeChild(inputElement);
+    </script> -->
+    <div class="app">
+      <div class="box"></div>
+    </div>
+
+    <script>
+      var boxElement = document.querySelector(".box");
+      console.log(boxElement);
+      boxElement.style.width = "100px";
+      boxElement.style.height = "100px";
+      boxElement.style.backgroundColor = "#F00";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios Módulo 2</title>
+  </head>
+  <body>
+    <div id="app">
+      <button onclick="adicionarQuadrado();">Adicionar quadrado</button>
+      <button onclick="desenharVetor();">Desenhar Lista de Nomes</button>
+      <input type="text" name="nome" />
+      <button onClick="adicionar()">Adicionar</button>
+    </div>
+
+    <script>
+      // 1º Exercício: Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+      // vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+      // aparecer na tela
+      function adicionarQuadrado() {
+        var quadrado = document.createElement("div");
+        var boxElement = document.querySelector("#app");
+        quadrado.style.width = "100px";
+        quadrado.style.height = "100px";
+        quadrado.style.backgroundColor = "#F00";
+        quadrado.style.margin = "10px";
+        quadrado.onmouseover = function() {
+          quadrado.style.backgroundColor = getRandomColor();
+        };
+        boxElement.appendChild(quadrado);
+      }
+
+      // 2º exercício
+      // Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+      // algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      // 3º exercício
+      // A partir do seguinte vetor:
+      function desenharVetor() {
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var ulNomes = document.createElement("ul");
+
+        for (var i = 0; i < nomes.length; i++) {
+          var liNome = document.createElement("li");
+          liNome.innerHTML = nomes[i];
+          ulNomes.appendChild(liNome);
+        }
+
+        var boxElement = document.querySelector("#app");
+        boxElement.appendChild(ulNomes);
+      }
+
+      // 4º exercício
+      // Seguindo o resultado do exercício anterior adicione um input em tela e um botão.
+      // Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+      // nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+      // demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.
+
+      function adicionar() {
+        var ulPai = document.querySelector("#app ul");
+
+        if (ulPai !== null) {
+          var input = document.querySelector("input[name=nome]");
+          var novoLi = document.createElement("li");
+          novoLi.innerHTML = input.value;
+          ulPai.appendChild(novoLi);
+          input.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
